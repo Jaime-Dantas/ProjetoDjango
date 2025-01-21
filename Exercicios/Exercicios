@@ -1,0 +1,7 @@
+ 5. Faça o algoritmo para calcular quanto será pago por um produto (PAG), sendo que o preço do produto (PR) e o desconto (D), em porcentagem, são fornecidos pelo usuário. Apresentar o valor a ser pago pelo produto.
+
+ 6. Faça o algoritmo para calcular qual foi a porcentagem de desconto dada em um determinado produto (DESC), (PRECO) e o preço que foi cobrado por ele depois do desconto (PRECOF) são fornecidos pelo usuário.
+
+ 7. Faça o algoritmo que receba do usuário uma temperatura em graus Farenheit (F) e a transforme em graus Celsius (C). A fórmula é C = 5/9 (F – 32).
+
+ 8. Faça o algoritmo que calcule a quantidade de tijolos iguais (QTD) necessários para construir uma determinada parede. São dados de entrada do programa: dimensões do tijolo (altura – AT e largura – LT) e dimensões da parede a ser construída (altura – AP e largura – LP).

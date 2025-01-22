@@ -39,5 +39,21 @@ cotacao(100,6.23);
 sendo que o preço do produto (PR) é fornecido pelo usuário e o desconto é de 5%.
 Apresentar o valor do desconto.
 
-*/
+function desconto (valorProduto){
+    if (valorProduto < 0) {
+        console.log('Insira um valor positivo!')
+    } else {
+        let des = (valorProduto*5)/100;
+        let total = valorProduto - des;
+        console.log('Valor do Produto '+valorProduto)
+        console.log('Valor do desconto '+des)
+        console.log('Total a pagar '+total)
+    }
+}
+desconto(100);
 
+5. Faça o algoritmo para calcular quanto será pago por um produto (PAG),
+sendo que o preço do produto (PR) e o desconto (D), em porcentagem,
+são fornecidos pelo usuário. Apresentar o valor a ser pago pelo produto.
+
+*/

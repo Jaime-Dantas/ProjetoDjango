@@ -56,4 +56,41 @@ desconto(100);
 sendo que o preço do produto (PR) e o desconto (D), em porcentagem,
 são fornecidos pelo usuário. Apresentar o valor a ser pago pelo produto.
 
+function totalProd (valorProd,desconto){
+    let totalProduto;
+    let totalDesc;
+
+    if ((valorProd <= 0) || (desconto <= 0)){
+        console.log('Valor ínvalido, insira apenas números positivos.')
+        return;
+    }
+    totalDesc = (valorProd*desconto)/100;
+    totalProduto = valorProd - ((valorProd*desconto)/100);
+    console.log('Valor do item: '+valorProd);
+    console.log('Desconto: '+totalDesc);
+    console.log('Total a pagar: '+totalProduto);
+}
+totalProd(100,5)
+
+6. Faça o algoritmo para calcular qual foi a porcentagem de desconto dada em um determinado produto (DESC),
+(PRECO) e o preço que foi cobrado por ele depois do desconto (PRECOF) são fornecidos pelo usuário.
+
+
+7. Faça o algoritmo que receba do usuário uma temperatura em graus Farenheit (F) e a transforme em graus Celsius (C). A fórmula é C = 5/9 (F – 32).
+
+
+8. Faça o algoritmo que calcule a quantidade de tijolos iguais (QTD)
+necessários para construir uma determinada parede.
+São dados de entrada do programa: dimensões do tijolo (altura – AT e largura – LT)
+e dimensões da parede a ser construída (altura – AP e largura – LP).
 */
+
+function porcentagemDesconto (desconto,preco){
+    let precoDesconto;
+
+    if (desconto <= 0 || preco <=0){
+        console.log("Valor invalido, preço e desconto devem ser positivos!")
+        return;
+    }
+    
+}

@@ -124,4 +124,44 @@ function previsaoConstrucao(alturaTijolo,larguraTijolo,alturaParede,larguraPared
     console.log("A quantidade aproximada de tijolos para construir uma parede de "+areaParede+"m² é de: "+total);
 }
 previsaoConstrucao(5,2,10,10);
+
+14) Ler um valor e escrever a mensagem É MAIOR QUE 10! se o valor lido for maior que 10, caso contrário escrever NÃO É MAIOR QUE 10! 
+
+function maiorDez(n){
+    if (n>10){
+        console.log(`${n} é maior que DEZ!`)
+    } else {
+        console.log(`${n} não é maior que DEZ!`)
+    }
+}
+maiorDez(12)
+
+15) Ler um valor e escrever se é positivo ou negativo (considere o valor zero como positivo). 
+function positivoNegativo(n){
+    if (typeof n !== "number"){
+        console.log ("Entrada invalida, por favor digite um numéro")
+        return
+    }
+
+    if (n >= 0){
+        console.log(`${n} é um numéro positivo!`)
+    } else {
+        console.log(`${n} é um numéro negativo!`)
+    }
+}
+positivoNegativo(12)
+positivoNegativo(-10)
+positivoNegativo("abc")
+
+16) As maçãs custam R$ 1,30 cada se forem compradas menos de uma dúzia, e R$ 1,00 se forem compradas pelo menos 12. Escreva um programa que leia o número de maçãs compradas, calcule e escreva o custo total da compra. 
+
+17) Ler as notas da 1a. e 2a. avaliações de um aluno. Calcular a média aritmética simples e escrever uma mensagem que diga se o aluno foi ou não aprovado (considerar que nota igual ou maior que 6 o aluno é aprovado). Escrever também a média calculada. 
+
+18) Ler o ano atual e o ano de nascimento de uma pessoa. Escrever uma mensagem que diga se ela poderá ou não votar este ano (não é necessário considerar o mês em que a pessoa nasceu). 
+
+19) Ler dois valores (considere que não serão lidos valores iguais) e escrever o maior deles. 
+
+20) Ler dois valores (considere que não serão lidos valores iguais) e escrevê-los em ordem crescente.
+
 */
+

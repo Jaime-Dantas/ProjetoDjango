@@ -75,22 +75,53 @@ totalProd(100,5)
 6. Faça o algoritmo para calcular qual foi a porcentagem de desconto dada em um determinado produto (DESC),
 (PRECO) e o preço que foi cobrado por ele depois do desconto (PRECOF) são fornecidos pelo usuário.
 
+function porcentagemDesconto (preco,precodes){
+    let desconto;
+    let porcem;
+
+    if (precodes <= 0 || preco <=0){
+        console.log("Valor invalido, preço e desconto devem ser positivos!")
+        return;
+    }
+    desconto = preco - precodes;
+    porcem = ((desconto/preco)*100);
+
+    console.log('Valor do item: '+preco);
+    console.log('Desconto: '+porcem);
+    console.log('Total a pagar: '+precodes);
+    
+}
+
+porcentagemDesconto(100,90);
+
 
 7. Faça o algoritmo que receba do usuário uma temperatura em graus Farenheit (F) e a transforme em graus Celsius (C). A fórmula é C = 5/9 (F – 32).
+function farenheitparaCelcius(faren){
+    let celcius;
+    celcius = (5/9)*(faren-32);
+    console.log('A tamperatura '+faren+' convertida para Celsius é: '+celcius.toFixed(1)+'°')
+}
+farenheitparaCelcius(100)
+
 
 
 8. Faça o algoritmo que calcule a quantidade de tijolos iguais (QTD)
 necessários para construir uma determinada parede.
 São dados de entrada do programa: dimensões do tijolo (altura – AT e largura – LT)
 e dimensões da parede a ser construída (altura – AP e largura – LP).
-*/
 
-function porcentagemDesconto (desconto,preco){
-    let precoDesconto;
+function previsaoConstrucao(alturaTijolo,larguraTijolo,alturaParede,larguraParede){    
+    const medis = [alturaParede,larguraParede, alturaTijolo, larguraTijolo]
 
-    if (desconto <= 0 || preco <=0){
-        console.log("Valor invalido, preço e desconto devem ser positivos!")
+    if (medis.some((v)=> typeof v !== "number")){
+        console.log("Entrada invalida, por favor insira valores numéricos.")
         return;
-    }
-    
+    }  
+
+    let areaTijolo = alturaTijolo*larguraTijolo;
+    let areaParede = alturaParede*larguraParede;
+    total = areaParede/areaTijolo;
+    console.log("A quantidade aproximada de tijolos para construir uma parede de "+areaParede+"m² é de: "+total);
 }
+previsaoConstrucao(5,2,10,10);
+*/

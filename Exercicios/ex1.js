@@ -154,14 +154,182 @@ positivoNegativo(-10)
 positivoNegativo("abc")
 
 16) As maçãs custam R$ 1,30 cada se forem compradas menos de uma dúzia, e R$ 1,00 se forem compradas pelo menos 12. Escreva um programa que leia o número de maçãs compradas, calcule e escreva o custo total da compra. 
+function compasDesc(n){
+    if (typeof n !== "number" || isNaN(n)){
+        console.log("Entrada inválida! Por favor, digite um número.")
+        return;
+    } else if (n < 12){
+        total = n *1.30
+        console.log(`Valor total a pagar: R$ ${total}`)
+        return;
+    } else {
+        total = n*1
+        console.log(`Valor total a pagar: R$ ${total}`)
+        return;
+    }
+}
+compasDesc(5)
+compasDesc(12)
+compasDesc('12')
 
 17) Ler as notas da 1a. e 2a. avaliações de um aluno. Calcular a média aritmética simples e escrever uma mensagem que diga se o aluno foi ou não aprovado (considerar que nota igual ou maior que 6 o aluno é aprovado). Escrever também a média calculada. 
+function notaMedia(nota1,nota2){
+    media = (nota1+nota2)/2
+    if (media >=6){
+        console.log(`Média: ${media}, Aluno aprovado!`)
+        return;
+    } else {
+        console.log(`Média: ${media}, Aluno reprovado!`)
+        return;
+    }
+}
+notaMedia(6,6);
+notaMedia(6,5);
 
 18) Ler o ano atual e o ano de nascimento de uma pessoa. Escrever uma mensagem que diga se ela poderá ou não votar este ano (não é necessário considerar o mês em que a pessoa nasceu). 
 
+function idadeVoto(anoNasc,anoAtual){
+    idade = anoAtual-anoNasc;
+
+    resul = idade >=18 ? "Poderá Votar" : "Não tem idade suficiente para votar";
+
+    console.log(`Você ${resul}`)
+}
+idadeVoto(1993,2025);
+idadeVoto(2010,2025);
+
 19) Ler dois valores (considere que não serão lidos valores iguais) e escrever o maior deles. 
+function valorMaior(num1, num2) {  
+    if (num1 === num2) {
+        console.log("Entrada inválida, digite valores diferentes!");
+        return;
+    }
+    let maior = num1 > num2 ? num1 : num2; 
+    console.log(`O maior valor é: ${maior}`);
+}
+valorMaior(10, 5);
+valorMaior(3, 8);
 
 20) Ler dois valores (considere que não serão lidos valores iguais) e escrevê-los em ordem crescente.
+function maiorMenor(num1, num2) {  
+    if (num1 === num2) {
+        console.log("Entrada inválida, digite valores diferentes!");
+        return;
+    }
+    let maior = num1 > num2 ? num1 : num2; 
+    let menor = num1 < num2 ? num1 : num2; 
+    console.log(`O maior valor é: ${maior}`);
+    console.log(`O menor valor é: ${menor}`);
+}
+maiorMenor(10, 5);
+maiorMenor(3, 8);
+
+27) Ler um valor e escrever se é positivo, negativo ou zero. 
+function positivoNegativo(n){
+    switch(true){
+        case (n>0):
+            console.log(`${n} é um valor positivo!`)
+            break;
+        case (n<0):
+            console.log(`${n} é um valor negativo!`)
+            break;
+        case (n==0):
+            console.log(`${n} é um valor neutro!`)
+            break;
+        default:
+            console.log("Valor Invalido!")
+            break;            
+    }
+}
+positivoNegativo(10)
+positivoNegativo(-5)
+positivoNegativo(0)
+positivoNegativo("abc")
+
+28) Ler 3 valores (considere que não serão informados valores iguais) e escrever o maior deles. 
+function trioMaior (nun1,nun2,nun3){
+    if (nun1 == nun2 || nun1 == nun3 || nun2 == nun3) {
+        console.log("Entrada invalida, Digite valores diferentes");
+        return;
+    }
+    let maior = [nun1,nun2,nun3].sort((a,b) => a-b);
+    console.log(O maior valor é: ${maior[2]});
+}
+trioMaior(5,2,10)
+trioMaior(45,12,10)
+trioMaior(10,1,10)
+29) Ler 3 valores (considere que não serão informados valores iguais) e escrever a soma dos 2 maiores. 
+function maiorSoma(nun1,nun2,nun3){
+    
+    if (new Set([nun1,nun2,nun3]).size !== 3){
+        console.log("Entrada invalida, Digite valores diferentes");
+        return;
+    }
+    let ordem = [nun1,nun2,nun3].sort((a,b) => a-b);
+    soma = ordem[2]+ordem[1];
+    console.log(A soma dos maiores é: ${soma});
+}
+maiorSoma(10,2,8)
+maiorSoma(10,24,80)
+maiorSoma(10,24,10)
+30) Ler 3 valores (considere que não serão informados valores iguais) e escrevê-los em ordem crescente. 
+function ordemCrescente(nun1,nun2,nun3){
+    
+    if (new Set([nun1,nun2,nun3]).size !== 3){
+        console.log("Entrada invalida, Digite valores diferentes");
+        return;
+    }
+    let ordem = [nun1,nun2,nun3].sort((a,b) => a-b);    
+    console.log(Os valores em ordem ficam: ${ordem});
+}
+ordemCrescente(10,2,8)
+ordemCrescente(10,24,80)
+ordemCrescente(10,10,10)
+31) Ler 3 valores (A, B e C) representando as medidas dos lados de um triângulo e escrever se formam ou não um triângulo. OBS: para formar um triângulo, o valor de cada lado deve ser menor que a soma dos outros 2 lados. 
+function verificarTrinagulo(nun1,nun2,nun3){    
+    arr=[nun1,nun2,nun3]
+    if (!arr.every(num => typeof num === "number" && !isNaN(num))){
+        console.log("Entrada invalida, Digite apenas números");
+        return;
+    }
+    let ladoA = nun2+nun3
+    let ladoB = nun1+nun3
+    let ladoC = nun1+nun2    
+    if ( nun1 < ladoA && nun2 < ladoB  && nun3 < ladoC ){
+        console.log('É um triângulo.');
+        return;
+    } else {
+        console.log('Não é um triângulo')
+    }    
+}
+verificarTrinagulo(10,10,10);
+verificarTrinagulo(100,15,10);
+verificarTrinagulo(10,3,4);
+
+32) Ler o nome de 2 times e o número de gols marcados na partida (para cada time). Escrever o nome do vencedor. Caso não haja vencedor deverá ser impressa a palavra EMPATE. 
+
+33) Ler dois valores e imprimir uma das três mensagens a seguir: ‘Números iguais’, caso os números sejam iguais ‘Primeiro é maior’, caso o primeiro seja maior que o segundo; ‘Segundo maior’, caso o segundo seja maior que o primeiro. 
+
+34) Seja o seguinte algoritmo: início ler x ler y z= (x*y) + 5 se z <= 0 então resposta ‘A’ senão se z <= 100 então resposta ‘B’ senão resposta ‘C’ fim_se fim_se escrever z, resposta fim Faça um teste de mesa e complete o quadro a seguir para os seguintes valores: X =3, Y = 2, Z= , resposta: X = 150, Y=3, Z= , resposta:
 
 */
+function verificarTrinagulo(nun1,nun2,nun3){    
+    arr=[nun1,nun2,nun3]
+    if (!arr.every(num => typeof num === "number" && !isNaN(num))){
+        console.log("Entrada invalida, Digite apenas números");
+        return;
+    }
+    let ladoA = nun2+nun3
+    let ladoB = nun1+nun3
+    let ladoC = nun1+nun2    
+    if ( nun1 < ladoA && nun2 < ladoB  && nun3 < ladoC ){
+        console.log('É um triângulo.');
+        return;
+    } else {
+        console.log('Não é um triângulo')
+    }    
+}
+verificarTrinagulo(10,10,10);
+verificarTrinagulo(100,15,10);
+verificarTrinagulo(10,3,4);
 

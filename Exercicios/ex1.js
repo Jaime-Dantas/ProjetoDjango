@@ -286,11 +286,10 @@ ordemCrescente(10,2,8)
 ordemCrescente(10,24,80)
 ordemCrescente(10,10,10)
 31) Ler 3 valores (A, B e C) representando as medidas dos lados de um triângulo e escrever se formam ou não um triângulo. OBS: para formar um triângulo, o valor de cada lado deve ser menor que a soma dos outros 2 lados. 
-function verificarTrinagulo(nun1,nun2,nun3){    
+function verificarTriangulo(nun1,nun2,nun3){    
     arr=[nun1,nun2,nun3]
     if (!arr.every(num => typeof num === "number" && !isNaN(num))){
-        console.log("Entrada invalida, Digite apenas números");
-        return;
+        console.log("Entrada invalida, Digite apenas números");        
     }
     let ladoA = nun2+nun3
     let ladoB = nun1+nun3
@@ -302,34 +301,42 @@ function verificarTrinagulo(nun1,nun2,nun3){
         console.log('Não é um triângulo')
     }    
 }
-verificarTrinagulo(10,10,10);
-verificarTrinagulo(100,15,10);
-verificarTrinagulo(10,3,4);
+verificarTriangulo(10,10,10);
+verificarTriangulo(100,15,10);
+verificarTriangulo(10,3,4);
 
 32) Ler o nome de 2 times e o número de gols marcados na partida (para cada time). Escrever o nome do vencedor. Caso não haja vencedor deverá ser impressa a palavra EMPATE. 
-
+function jogoFutebol(timeA,golsA,timeB,golsB){    
+    let time1 = [timeA,golsA];
+    let time2 = [timeB,golsB];
+    if (time1[1] == time2[1]){
+        console.log("EMPATE!")
+    } else if (time1[1] > time2[1]){
+        console.log(`${time1[0]} é o atual campeão do campeonato!`)
+    } else {
+        console.log(`${time2[0]} é o atual campeão do campeonato!`)
+    }           
+}
+jogoFutebol("Fluminense",3,"Bahia",2);
+jogoFutebol("Fluminense",0,"Bahia",0);
+jogoFutebol("Fluminense",1,"Bahia",2);
 33) Ler dois valores e imprimir uma das três mensagens a seguir: ‘Números iguais’, caso os números sejam iguais ‘Primeiro é maior’, caso o primeiro seja maior que o segundo; ‘Segundo maior’, caso o segundo seja maior que o primeiro. 
 
 34) Seja o seguinte algoritmo: início ler x ler y z= (x*y) + 5 se z <= 0 então resposta ‘A’ senão se z <= 100 então resposta ‘B’ senão resposta ‘C’ fim_se fim_se escrever z, resposta fim Faça um teste de mesa e complete o quadro a seguir para os seguintes valores: X =3, Y = 2, Z= , resposta: X = 150, Y=3, Z= , resposta:
 
 */
-function verificarTrinagulo(nun1,nun2,nun3){    
-    arr=[nun1,nun2,nun3]
-    if (!arr.every(num => typeof num === "number" && !isNaN(num))){
-        console.log("Entrada invalida, Digite apenas números");
-        return;
-    }
-    let ladoA = nun2+nun3
-    let ladoB = nun1+nun3
-    let ladoC = nun1+nun2    
-    if ( nun1 < ladoA && nun2 < ladoB  && nun3 < ladoC ){
-        console.log('É um triângulo.');
-        return;
+function jogoFutebol(timeA,golsA,timeB,golsB){    
+    let time1 = [timeA,golsA];
+    let time2 = [timeB,golsB];
+    if (time1[1] == time2[1]){
+        console.log("EMPATE!")
+    } else if (time1[1] > time2[1]){
+        console.log(`${time1[0]} é o atual campeão do campeonato!`)
     } else {
-        console.log('Não é um triângulo')
-    }    
+        console.log(`${time2[0]} é o atual campeão do campeonato!`)
+    }           
 }
-verificarTrinagulo(10,10,10);
-verificarTrinagulo(100,15,10);
-verificarTrinagulo(10,3,4);
+jogoFutebol("Fluminense",3,"Bahia",2);
+jogoFutebol("Fluminense",0,"Bahia",0);
+jogoFutebol("Fluminense",1,"Bahia",2);
 

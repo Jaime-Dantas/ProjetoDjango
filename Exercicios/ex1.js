@@ -321,17 +321,17 @@ jogoFutebol("Fluminense",3,"Bahia",2);
 jogoFutebol("Fluminense",0,"Bahia",0);
 jogoFutebol("Fluminense",1,"Bahia",2);
 
-33) Ler dois valores e imprimir uma das trÃªs mensagens a seguir: â€˜NÃºmeros iguaisâ€™, caso os nÃºmeros sejam iguais â€˜Primeiro Ã© maiorâ€™, caso o primeiro seja maior que o segundo; â€˜Segundo maiorâ€™, caso o segundo seja maior que o primeiro. 
+33) Ler dois valores e imprimir uma das três mensagens a seguir: ‘Números iguais’, caso os números sejam iguais ‘Primeiro é maior’, caso o primeiro seja maior que o segundo; ‘Segundo maior’, caso o segundo seja maior que o primeiro. 
 function tresMensagens(A,B){
     switch(true){
         case (A>B):
-            console.log(`${A} Primeiro Ã© maior!`)
+            console.log(`${A} Primeiro é maior!`)
             break;
         case (A<B):
-            console.log(`${B} Segundo Ã© maior!`)
+            console.log(`${B} Segundo é maior!`)
             break;
         case (A==B):
-            console.log(`NÃºmeros iguais!`)
+            console.log(`Números iguais!`)
             break;
         default:
             console.log("Valor Invalido!")
@@ -343,21 +343,95 @@ tresMensagens(6,21)
 tresMensagens(10,10)
 tresMensagens("abc")
 
-34) Seja o seguinte algoritmo: inÃ­cio ler x ler y z= (x*y) + 5 se z <= 0 entÃ£o resposta â€˜Aâ€™ senÃ£o se z <= 100 entÃ£o resposta â€˜Bâ€™ senÃ£o resposta â€˜Câ€™ fim_se fim_se escrever z, resposta fim FaÃ§a um teste de mesa e complete o quadro a seguir para os seguintes valores: X =3, Y = 2, Z= , resposta: X = 150, Y=3, Z= , resposta:
+34) Seja o seguinte algoritmo: início ler x ler y z= (x*y) + 5 se z <= 0 então resposta ‘A’ senão se z <= 100 então resposta ‘B’ senão resposta ‘C’ fim_se fim_se escrever z, resposta fim Faça um teste de mesa e complete o quadro a seguir para os seguintes valores: X =3, Y = 2, Z= , resposta: X = 150, Y=3, Z= , resposta:
+function testeMesa(X,Y){
+    if (typeof X !== "number" || typeof Y !== "number" || isNaN(X) || isNaN(Y)) {
+        console.log("Entrada inválida! Digite apenas números.");
+        return;
+    }
+    let Z = (X*Y)+5;
+    let resposta;
+
+    if (Z <= 0) {
+        resposta = 'A';
+    } else if (Z <= 100) {
+        resposta = 'B';
+    } else {
+        resposta = 'C';
+    }
+    console.log(`Z = ${Z}, Resposta = ${resposta}`);
+}
+testeMesa(3,2)
+testeMesa(150,3)
+testeMesa("abc")
+
+21) Ler a hora de início e a hora de fim de um jogo de Xadrez (considere apenas horas inteiras, sem os minutos) e calcule a duração do jogo em horas, sabendo-se que o tempo máximo de duração do jogo é de 24 horas e que o jogo pode iniciar em um dia e terminar no dia seguinte. 
+function horaXadrez(inicio, fim) {    
+    if (inicio < 0 || inicio > 23 || fim < 0 || fim > 23) {
+        console.log("Erro: Horário inválido! Digite valores entre 0 e 23.");
+        return;
+    }
+    let duracao;
+    if (fim >= inicio) {
+        duracao = fim - inicio;
+    } else {
+        duracao = (24 - inicio) + fim;
+    }
+    console.log(`Duração do jogo: ${duracao} horas.`);
+}
+horaXadrez(10, 15);
+horaXadrez(22, 4);
+horaXadrez(18, 18);
+horaXadrez(24, 55);
+
+22) A jornada de trabalho semanal de um funcionário é de 40 horas. O funcionário que trabalhar mais de 40 horas receberá hora extra, cujo cálculo é o valor da hora regular com um acréscimo de 50%. Escreva um algoritmo que leia o número de horas trabalhadas em um mês, o salário por hora e escreva o salário total do funcionário, que deverá ser acrescido das horas extras, caso tenham sido trabalhadas (considere que o mês possua 4 semanas exatas). 
+function jornadaTrabalho(horasMes,salarioHora) {    
+    if (typeof horasMes !== "number" || typeof salarioHora !== "number" || isNaN(horasMes) || isNaN(salarioHora)) {
+        console.log("Entrada inválida! Digite apenas números.");
+        return;
+    }
+    let jornadaMensal = 40 * 4; // 160 horas no mês
+    let salarioBase = salarioHora * horasMes;
+    let horasExtras = Math.max(0, horasMes - jornadaMensal); // Apenas horas extras
+    let valorHoraExtra = salarioHora * 1.5; // 50% a mais por hora extra
+    let extraReceber = horasExtras * valorHoraExtra;
+    let salarioTotal = (salarioHora * jornadaMensal) + extraReceber; // Soma base + extra
+
+    console.log(`Total de horas trabalhadas: ${horasMes}`);
+    console.log(`Total de horas extras: ${horasExtras}`);
+    console.log(`Valor recebido por horas extras: R$ ${extraReceber.toFixed(2)}`);
+    console.log(`Salário total a receber: R$ ${salarioTotal.toFixed(2)}`);
+
+}
+jornadaTrabalho(200,8);
+jornadaTrabalho(160,8);
+jornadaTrabalho("abc");
+
+23) Para o enunciado a seguir foi elaborado um algoritmo em Português Estruturado que contém erros, identifique os erros no algoritmo apresentado abaixo: Enunciado: Tendo como dados de entrada o nome, a altura e o sexo (M ou F) de uma pessoa, calcule e mostre seu peso ideal, utilizando as seguintes fórmulas: - para sexo masculino: peso ideal = (72.7 * altura) - 58 - para sexo feminino: peso ideal = (62.1 * altura) - 44.7 inicio ler nome ler sexo se sexo = M então peso_ideal (72.7 * altura) - 58 senão peso_ideal (62.1 * altura) – 44.7 fim_se escrever peso_ideal fim
+
+ 24) Ler o salário fixo e o valor das vendas efetuadas pelo vendedor de uma empresa. Sabendo-se que ele recebe uma comissão de 3% sobre o total das vendas até R$ 1.500,00 mais 5% sobre o que ultrapassar este valor, calcular e escrever o seu salário total. 
+
+25) Faça um algoritmo para ler: número da conta do cliente, saldo, débito e crédito. Após, calcular e escrever o saldo atual (saldo atual = saldo - débito + crédito). Também testar se saldo atual for maior ou igual a zero escrever a mensagem 'Saldo Positivo', senão escrever a mensagem 'Saldo Negativo'. 
+
+26) Faça um algoritmo para ler: quantidade atual em estoque, quantidade máxima em estoque e quantidade mínima em estoque de um produto. Calcular e escrever a quantidade média ((quantidade média = quantidade máxima + quantidade mínima)/2). Se a quantidade em estoque for maior ou igual a quantidade média escrever a mensagem 'Não efetuar compra', senão escrever a mensagem 'Efetuar compra'.
 
 */
-function jogoFutebol(timeA,golsA,timeB,golsB){    
-    let time1 = [timeA,golsA];
-    let time2 = [timeB,golsB];
-    if (time1[1] == time2[1]){
-        console.log("EMPATE!")
-    } else if (time1[1] > time2[1]){
-        console.log(`${time1[0]} Ã© o atual campeÃ£o do campeonato!`)
-    } else {
-        console.log(`${time2[0]} Ã© o atual campeÃ£o do campeonato!`)
-    }           
+
+
+function IMC(peso,altura,sexo) {    
+    if (typeof peso !== "number" || typeof altura !== "number" || isNaN(peso) || isNaN(altura)) {
+        console.log("Entrada inválida! Digite apenas números para peso e altura.");
+        return;
+    }
+    let IMC = peso/(altura*altura) // O primeiro erro está na formula que foi repassada errada.
+    if (sexo == 'M'){
+
+    }
+
+    
+
 }
-jogoFutebol("Fluminense",3,"Bahia",2);
-jogoFutebol("Fluminense",0,"Bahia",0);
-jogoFutebol("Fluminense",1,"Bahia",2);
+jornadaTrabalho(200,8);
+jornadaTrabalho(160,8);
+jornadaTrabalho("abc");
 

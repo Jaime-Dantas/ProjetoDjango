@@ -17,9 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.http import HttpResponse
+from recipes.views import home
 
-def home(request):
-    return HttpResponse('HOME')
+
+
+
+def _home(request):
+    return HttpResponse('')
 
 def sobre(request):
     return HttpResponse('SOBRE')
@@ -29,7 +33,7 @@ def contato(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', home), 
+    path('', home),     
     path('sobre/', sobre),
     path('contato/', contato),
 ]

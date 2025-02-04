@@ -408,6 +408,26 @@ jornadaTrabalho(160,8);
 jornadaTrabalho("abc");
 
 23) Para o enunciado a seguir foi elaborado um algoritmo em Português Estruturado que contém erros, identifique os erros no algoritmo apresentado abaixo: Enunciado: Tendo como dados de entrada o nome, a altura e o sexo (M ou F) de uma pessoa, calcule e mostre seu peso ideal, utilizando as seguintes fórmulas: - para sexo masculino: peso ideal = (72.7 * altura) - 58 - para sexo feminino: peso ideal = (62.1 * altura) - 44.7 inicio ler nome ler sexo se sexo = M então peso_ideal (72.7 * altura) - 58 senão peso_ideal (62.1 * altura) – 44.7 fim_se escrever peso_ideal fim
+function calcularPesoIdeal(altura, sexo) {
+    if (typeof altura !== "number" || isNaN(altura)) {
+        console.log("Entrada inv�lida! Digite um n�mero v�lido para a altura.");
+        return;
+    }
+    if (sexo !== 'M' && sexo !== 'F') {
+        console.log("Entrada inv�lida! O sexo deve ser 'M' ou 'F'.");
+        return;
+    }
+    let pesoIdeal;    
+    if (sexo === 'M') {
+        pesoIdeal = (72.7 * altura) - 58;
+    } else {
+        pesoIdeal = (62.1 * altura) - 44.7;
+    }
+    console.log(`O peso ideal para uma pessoa de sexo '${sexo}' e altura ${altura.toFixed(2)}m �: ${pesoIdeal.toFixed(2)} kg`);
+}
+calcularPesoIdeal(1.60, "M");
+calcularPesoIdeal(1.69, "F");
+calcularPesoIdeal("abc", "M");
 
  24) Ler o salário fixo e o valor das vendas efetuadas pelo vendedor de uma empresa. Sabendo-se que ele recebe uma comissão de 3% sobre o total das vendas até R$ 1.500,00 mais 5% sobre o que ultrapassar este valor, calcular e escrever o seu salário total. 
 
@@ -418,20 +438,7 @@ jornadaTrabalho("abc");
 */
 
 
-function IMC(peso,altura,sexo) {    
-    if (typeof peso !== "number" || typeof altura !== "number" || isNaN(peso) || isNaN(altura)) {
-        console.log("Entrada inválida! Digite apenas números para peso e altura.");
-        return;
-    }
-    let IMC = peso/(altura*altura) // O primeiro erro está na formula que foi repassada errada.
-    if (sexo == 'M'){
 
-    }
 
-    
 
-}
-jornadaTrabalho(200,8);
-jornadaTrabalho(160,8);
-jornadaTrabalho("abc");
 
